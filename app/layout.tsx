@@ -15,6 +15,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: 'wDU1PYBMM1c37aQRWhUSDCUA8AtrSge9MJlEpZ2Xhtk',
+  },
   title: 'HomeRepairPro — Ghar Ki Har Repair, Ek Call Mein | +91 88895 39174',
   description:
     'Professional home appliance repair in Indore, Bhopal & 8 cities. AC, Washing Machine, Refrigerator, Geyser repair. Same day service, starting ₹299. GST & MSME registered.',
