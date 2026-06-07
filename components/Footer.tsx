@@ -68,8 +68,8 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-6 text-xs text-gray-500">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
             <div className="flex flex-wrap gap-4">
-              <span>✓ GST No: [Add GST Number]</span>
-              <span>✓ MSME | Udyam No: UDYAM-MP-XXXXX</span>
+              <span>✓ GST No: 23DNCPG4775E1Z7</span>
+              <span>✓ MSME | Udyam No: UDYAM-MP-10-0042011</span>
               <span>✓ Verified Service Provider</span>
             </div>
             <p>© 2025 HomeRepairPro. All rights reserved.</p>

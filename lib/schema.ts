@@ -23,6 +23,8 @@ export function localBusinessSchema() {
     },
     priceRange: '₹299 - ₹2999',
     openingHours: 'Mo-Su 06:00-22:00',
+    taxID: '23DNCPG4775E1Z7',
+    identifier: 'UDYAM-MP-10-0042011',
   };
 }
 

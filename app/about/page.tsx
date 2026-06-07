@@ -60,7 +60,7 @@ export default function AboutPage() {
                 Aaj hum Indore, Bhopal, Ujjain, Jabalpur, Jaipur aur 5 aur cities mein 50+ verified technicians ke saath service de rahe hain. Har technician background-verified aur trained hai.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Hum GST registered business hain (GST No: [Add GST Number]) aur Udyam (MSME) registered hain. Har repair ke baad proper GST invoice milti hai.
+                Hum GST registered business hain (GST No: 23DNCPG4775E1Z7) aur Udyam (MSME) registered hain (Udyam No: UDYAM-MP-10-0042011). Har repair ke baad proper GST invoice milti hai.
               </p>
             </div>
             <div className="relative h-64 rounded-2xl overflow-hidden">
@@ -86,12 +86,12 @@ export default function AboutPage() {
               {
                 icon: '📋',
                 title: 'GST Registered Business',
-                detail: 'GST No: [Add GST Number] — Har service pe proper GST invoice milti hai.',
+                detail: 'GST No: 23DNCPG4775E1Z7 — Har service pe proper GST invoice milti hai.',
               },
               {
                 icon: '🏛️',
                 title: 'MSME / Udyam Registered',
-                detail: 'Udyam No: UDYAM-MP-XXXXX — Government recognized small business.',
+                detail: 'Udyam No: UDYAM-MP-10-0042011 — Government recognized small business.',
               },
               {
                 icon: '✅',
