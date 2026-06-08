@@ -63,12 +63,14 @@ export default function AboutPage() {
                 Hum GST registered business hain (GST No: 23DNCPG4775E1Z7) aur Udyam (MSME) registered hain (Udyam No: UDYAM-MP-10-0042011). Har repair ke baad proper GST invoice milti hai.
               </p>
             </div>
-            <div className="relative h-64 rounded-2xl overflow-hidden">
+            <div className="rounded-2xl overflow-hidden">
               <Image
                 src="/about-technician.png"
                 alt="HomeRepairPro technician at work"
-                fill
-                className="object-cover"
+                width={600}
+                height={450}
+                className="w-full h-auto block"
+                style={{ clipPath: 'inset(0 0 5% 0)' }}
                 sizes="(max-width: 768px) 100vw, 400px"
                 loading="lazy"
               />

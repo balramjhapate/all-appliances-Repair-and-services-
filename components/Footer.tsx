@@ -83,7 +83,7 @@ export default function Footer() {
               <span>✓ MSME | Udyam No: UDYAM-MP-10-0042011</span>
               <span>✓ Verified Service Provider</span>
             </div>
-            <p>© 2025 HomeRepairPro. All rights reserved.</p>
+            <p>© 2026 HomeRepairPro. All rights reserved.</p>
           </div>
         </div>
       </div>

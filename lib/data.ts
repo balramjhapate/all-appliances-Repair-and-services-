@@ -5,8 +5,28 @@ export const services = [
     emoji: '❄️',
     image: '/ac-repair.png',
     desc: 'Cooling nahi? Gas leak? — Gas refill, PCB repair, installation & full service',
-    price: '299',
+    price: '449',
     brands: ['Voltas', 'Daikin', 'LG', 'Samsung', 'Hitachi', 'Blue Star', 'Carrier', 'Whirlpool', 'Panasonic', 'Godrej', 'Lloyd', 'O General', 'Mitsubishi', 'Haier', 'Toshiba', 'Electrolux', 'Sanyo', 'TCL', 'Onida', 'Videocon'],
+    plans: [
+      {
+        name: 'AC Basic Service',
+        price: '449',
+        popular: false,
+        features: ['Filter cleaning', 'Water wash', 'Cooling check', 'GST invoice included'],
+      },
+      {
+        name: 'Indoor + Outdoor Jet Wash',
+        price: '699',
+        popular: true,
+        features: ['High pressure foam wash', 'Deep cleaning', 'Performance optimization', '30-day service warranty'],
+      },
+      {
+        name: 'Gas Refill',
+        price: '999',
+        popular: false,
+        features: ['Leakage testing', 'Pure refrigerant gas', 'Optimal cooling setup', 'GST invoice included'],
+      },
+    ],
   },
   {
     name: 'Washing Machine Repair',
@@ -14,7 +34,7 @@ export const services = [
     emoji: '🫧',
     image: '/washing-machine.png',
     desc: 'Spin nahi ho rahi? Paani nahi nikal raha? — Drum, motor, pump & PCB repair',
-    price: '299',
+    price: '350',
     brands: ['LG', 'Samsung', 'IFB', 'Bosch', 'Siemens', 'Whirlpool', 'Haier', 'Panasonic', 'Electrolux', 'Midea', 'Godrej', 'Videocon', 'Onida', 'Lloyd', 'TCL', 'Koryo', 'BPL', 'Sansui', 'Intex'],
   },
   {
@@ -23,7 +43,7 @@ export const services = [
     emoji: '🧊',
     image: '/refrigerator.png',
     desc: 'Fridge thanda nahi kar raha? — Compressor, gas refill, thermostat & cooling fix',
-    price: '349',
+    price: '350',
     brands: ['LG', 'Samsung', 'Whirlpool', 'Haier', 'Bosch', 'Siemens', 'Panasonic', 'Hitachi', 'Electrolux', 'Liebherr', 'Godrej', 'Videocon', 'Onida', 'Midea', 'BPL'],
   },
   {
@@ -32,7 +52,7 @@ export const services = [
     emoji: '🔧',
     image: '/chimney.png',
     desc: 'Chimney smoke nahi kheench rahi? — Deep cleaning, filter & motor service',
-    price: '399',
+    price: '350',
     brands: ['Elica', 'Faber', 'Glen', 'Hindware', 'Prestige', 'Inalsa', 'Sunflame', 'Kutchina', 'Kaff', 'Bosch', 'Siemens', 'Whirlpool', 'Blowhot', 'Eurodomo', 'Hafele', 'Franke', 'Butterfly', 'Pigeon'],
   },
   {
@@ -41,7 +61,7 @@ export const services = [
     emoji: '🔥',
     image: '/geyser.png',
     desc: 'Geyser garam paani nahi de raha? — Heating element, thermostat & leakage fix',
-    price: '299',
+    price: '350',
     brands: ['Bajaj', 'Havells', 'Racold', 'AO Smith', 'Venus', 'Jaquar', 'Crompton', 'Orient', 'Usha', 'V-Guard', 'Kenstar', 'Morphy Richards', 'Hindware', 'Activa', 'Rinnai', 'Ferroli', 'Marc'],
   },
   {
@@ -50,7 +70,7 @@ export const services = [
     emoji: '📻',
     image: '/microwave.png',
     desc: 'Microwave heat nahi kar raha? — Magnetron, door, turntable & PCB repair',
-    price: '299',
+    price: '350',
     brands: ['LG', 'Samsung', 'IFB', 'Panasonic', 'Godrej', 'Whirlpool', 'Bajaj', 'Morphy Richards', 'Haier', 'Onida', 'Electrolux', 'Kenstar', 'Kelvinator', 'Siemens', 'Bosch', 'Koryo', 'TCL'],
   },
 ];
@@ -142,7 +162,7 @@ export const faqs = [
   },
   {
     q: 'Kya service charges fixed hain?',
-    a: 'Visiting charge ₹99 hai jo service pe adjust ho jaata hai. AC service starting ₹299 se, washing machine ₹299 se, refrigerator ₹349 se shuru hoti hai. Parts alag se charge hote hain.',
+    a: 'Visiting charge ₹99 hai jo service pe adjust ho jaata hai. AC, washing machine, refrigerator, geyser, microwave — sabki service starting ₹350 se shuru hoti hai. Parts alag se charge hote hain.',
   },
   {
     q: 'Kya aap GST receipt dete ho?',
@@ -230,5 +250,14 @@ export const blogPosts = [
     readTime: '4 min',
     image: '/blog-geyser.png',
     category: 'Geyser',
+  },
+  {
+    slug: 'ro-water-purifier-service-repair-indore-bhopal',
+    title: 'RO Water Purifier Repair & Service — Complete Guide 2026',
+    excerpt: 'RO ka paani kam aa raha hai ya TDS high hai? Yeh common problems aur unke solutions jaano — Indore & Bhopal mein same day service.',
+    date: '2026-06-08',
+    readTime: '5 min',
+    image: '/blog-ro.png',
+    category: 'RO Purifier',
   },
 ];

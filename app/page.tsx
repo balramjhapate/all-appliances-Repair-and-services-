@@ -39,7 +39,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-x-3 gap-y-1 mb-5 text-xs text-blue-200">
               <span>⚡ 30 Min Response</span>
               <span>✅ Verified Technicians</span>
-              <span>💰 Starting ₹299</span>
+              <span>💰 Starting ₹350</span>
               <span>🛡️ 30-Day Warranty</span>
             </div>
             <div className="flex gap-3">
@@ -79,7 +79,7 @@ export default function Home() {
             <p className="text-blue-200 text-sm font-medium mb-2 tracking-wide uppercase">
               Indore • Bhopal • 10 Cities
             </p>
-            <h1 className="text-5xl font-black text-white leading-tight mb-3">
+            <h1 className="text-4xl font-black text-white leading-tight mb-3">
               Indore & Bhopal Ka<br />
               <span className="text-[#F97316]">#1 Appliance Repair ✓</span>
             </h1>
@@ -89,13 +89,13 @@ export default function Home() {
             <div className="flex flex-wrap gap-3 mb-6 text-xs text-blue-200">
               <span>⚡ 30 Min Response</span>
               <span>✅ Verified Technicians</span>
-              <span>💰 Starting ₹299</span>
+              <span>💰 Starting ₹350</span>
               <span>🛡️ 30-Day Warranty</span>
             </div>
             <div className="flex gap-3">
               <a
                 href="tel:+918889539174"
-                className="flex items-center justify-center gap-2 bg-[#F97316] hover:bg-orange-600 text-white font-bold py-4 px-6 rounded-xl text-base transition-colors"
+                className="flex items-center justify-center gap-2 bg-[#F97316] hover:bg-orange-600 text-white font-bold py-4 px-6 rounded-xl text-base transition-colors whitespace-nowrap"
               >
                 📞 Call: 88895 39174
               </a>
@@ -103,25 +103,43 @@ export default function Home() {
                 href="https://wa.me/918889539174?text=Hi%2C%20I%20need%20home%20appliance%20repair%20service"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-green-500 text-white font-bold py-4 px-6 rounded-xl text-base transition-colors"
+                className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-green-500 text-white font-bold py-4 px-6 rounded-xl text-base transition-colors whitespace-nowrap"
               >
                 <WhatsAppIcon className="w-5 h-5" /> WhatsApp Us
               </a>
             </div>
           </div>
 
-          {/* Appliance image — desktop right */}
-          <div className="flex-shrink-0 relative w-[520px] h-[340px]">
-            <Image
-              src="/hero-appliances.png"
-              alt="AC, Washing Machine, Refrigerator, Geyser, Microwave, Chimney repair"
-              fill
-              priority
-              quality={90}
-              className="object-contain object-center drop-shadow-2xl"
-              sizes="520px"
-            />
-          </div>
+          {/* ┌──────────────────────────────────────────────────────────┐
+               │  HERO IMAGE CONTROLS (desktop only)                      │
+               │  w   → width  px  (bada = zyada)                         │
+               │  h   → height px  (bada = zyada)                         │
+               │  x   → LEFT/RIGHT  (-ve = left,  +ve = right)            │
+               │  y   → UPAR/NEECHE (-ve = upar,  +ve = neeche)           │
+               └──────────────────────────────────────────────────────────┘ */}
+          {(() => {
+            const IMG = { w: 580, h: 420, x: 40, y: 10 };
+            return (
+              <div
+                className="flex-shrink-0 relative"
+                style={{
+                  width:     IMG.w,
+                  height:    IMG.h,
+                  transform: `translate(${IMG.x}px, ${IMG.y}px)`,
+                }}
+              >
+                <Image
+                  src="/hero-appliances.png"
+                  alt="AC, Washing Machine, Refrigerator, Geyser, Microwave, Chimney repair"
+                  fill
+                  priority
+                  quality={90}
+                  className="object-contain object-center drop-shadow-2xl"
+                  sizes="640px"
+                />
+              </div>
+            );
+          })()}
         </div>
       </section>
 
@@ -160,6 +178,91 @@ export default function Home() {
       {/* CITIES */}
       <CityPills />
 
+      {/* INDORE & BHOPAL HIGHLIGHT */}
+      <section className="py-14 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <span className="inline-block bg-[#1B4FD8]/10 text-[#1B4FD8] text-xs font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-widest">Service Coverage</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              AC & Appliance Repair Service in Indore & Bhopal
+            </h2>
+            <p className="text-gray-500 text-sm max-w-xl mx-auto">
+              Same-day certified technicians across 70+ localities — fastest home appliance repair service in Madhya Pradesh
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            {/* Indore Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-blue-100 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 bg-[#1B4FD8] rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-black text-gray-900">Indore</h3>
+                  <p className="text-[#1B4FD8] text-xs font-semibold">AC Repair & Home Appliance Service</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-3 mb-5">
+                {[['36+', 'Areas Covered'], ['30 Min', 'Response Time'], ['3,000+', 'Repairs Done']].map(([val, label]) => (
+                  <div key={label} className="text-center bg-blue-50 rounded-xl py-3 px-2">
+                    <p className="text-lg font-black text-[#1B4FD8] leading-tight">{val}</p>
+                    <p className="text-[10px] text-gray-500 mt-0.5">{label}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-gray-500 mb-5 leading-relaxed">
+                <span className="font-semibold text-gray-700">Top Areas:</span> Vijay Nagar, Scheme 54, AB Road, Rau, Palasia, Super Corridor, Nipania, Silicon City & 28 more
+              </p>
+              <a
+                href="tel:+918889539174"
+                className="w-full flex items-center justify-center gap-2 bg-[#1B4FD8] hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl text-sm transition-colors"
+              >
+                📞 Book Repair in Indore
+              </a>
+            </div>
+
+            {/* Bhopal Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-emerald-100 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 bg-emerald-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-black text-gray-900">Bhopal</h3>
+                  <p className="text-emerald-600 text-xs font-semibold">AC Repair & Home Appliance Service</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-3 mb-5">
+                {[['35+', 'Areas Covered'], ['30 Min', 'Response Time'], ['2,000+', 'Repairs Done']].map(([val, label]) => (
+                  <div key={label} className="text-center bg-emerald-50 rounded-xl py-3 px-2">
+                    <p className="text-lg font-black text-emerald-600 leading-tight">{val}</p>
+                    <p className="text-[10px] text-gray-500 mt-0.5">{label}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-gray-500 mb-5 leading-relaxed">
+                <span className="font-semibold text-gray-700">Top Areas:</span> Kolar, Arera Colony, MP Nagar, BHEL, Hoshangabad Road, Shahpura, Govindpura & 28 more
+              </p>
+              <a
+                href="tel:+918889539174"
+                className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl text-sm transition-colors"
+              >
+                📞 Book Repair in Bhopal
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* WHY CHOOSE US */}
       <section className="py-10 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
@@ -171,7 +274,7 @@ export default function Home() {
             {[
               { icon: '⚡', title: '30 Min Response', desc: 'Call karo — 30-60 minute mein technician aapke ghar. Koi wait nahi.' },
               { icon: '✅', title: 'Police-Verified', desc: 'Background-checked, brand-trained technicians only. Ghar mein safe.' },
-              { icon: '💰', title: 'Pehle Price, Phir Kaam', desc: 'Starting ₹299 — repair shuru hone se pehle full estimate milegi.' },
+              { icon: '💰', title: 'Pehle Price, Phir Kaam', desc: 'Starting ₹350 — repair shuru hone se pehle full estimate milegi.' },
               { icon: '🛡️', title: '30-Day Warranty', desc: 'Same problem dobara aaye toh free repair — 100% guaranteed.' },
             ].map((item) => (
               <div key={item.title} className="bg-white rounded-xl p-5 shadow-sm text-center">
@@ -237,7 +340,7 @@ export default function Home() {
       {/* BOTTOM CTA */}
       <section className="py-8 bg-[#F97316] text-center">
         <p className="text-white font-bold text-xl mb-1">Aaj Repair Book Karein — Same Day Service</p>
-        <p className="text-orange-100 text-sm mb-4">AC • Fridge • Washing Machine • Geyser • Starting ₹299 • GST Invoice • 30-Day Warranty</p>
+        <p className="text-orange-100 text-sm mb-4">AC • Fridge • Washing Machine • Geyser • Starting ₹350 • GST Invoice • 30-Day Warranty</p>
         <a
           href="tel:+918889539174"
           className="inline-block bg-white text-[#F97316] font-black text-xl px-8 py-4 rounded-xl hover:bg-orange-50 transition-colors"

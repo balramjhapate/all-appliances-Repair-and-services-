@@ -14,7 +14,25 @@
       "Bash(Start-Sleep -Seconds 5)",
       "Bash(Get-Content \"C:\\\\Users\\\\jhapa\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-jhapa-Downloads-homerepairpro\\\\93052b60-c17e-4332-9f11-3b2c8066a93f\\\\tasks\\\\bt4c853v6.output\" -Tail 20)",
       "WebFetch(domain:localhost)",
-      "Bash(curl -s \"http://127.0.0.1:3001/landing/ac-repair-indore\")"
+      "Bash(curl -s \"http://127.0.0.1:3001/landing/ac-repair-indore\")",
+      "Bash(ipconfig)",
+      "Bash(findstr /i \"IPv4\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(cp \"c:\\\\Users\\\\jhapa\\\\Downloads\\\\round logo.png\" \"C:\\\\Users\\\\jhapa\\\\Downloads\\\\homerepairpro-web\\\\public\\\\logo-round.png\")",
+      "Bash(cp \"c:\\\\Users\\\\jhapa\\\\Downloads\\\\logo website.png\" \"C:\\\\Users\\\\jhapa\\\\Downloads\\\\homerepairpro-web\\\\public\\\\logo.png\")",
+      "PowerShell(Get-Process *)",
+      "WebFetch(domain:sites.google.com)",
+      "WebFetch(domain:rbrefrigeration.in)",
+      "WebFetch(domain:shikharefrigeration.online)",
+      "WebFetch(domain:shivanshassociate.in)",
+      "WebFetch(domain:local.dutyguy.com)",
+      "WebFetch(domain:trueservicecenter.in)",
+      "Bash(echo \"PID=$!\")",
+      "Bash(chromium-cli *)",
+      "Bash(node *)",
+      "PowerShell(Copy-Item *)"
     ]
   }
 }

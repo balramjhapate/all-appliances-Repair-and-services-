@@ -231,4 +231,68 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  {
+    slug: 'ro-water-purifier-service-repair-indore-bhopal',
+    title: 'RO Water Purifier Repair & Service — Complete Guide 2026',
+    excerpt: 'RO ka paani kam aa raha hai ya TDS high hai? Yeh common problems aur unke solutions jaano — Indore & Bhopal mein same day service.',
+    date: '2026-06-08',
+    readTime: '5 min',
+    image: '/blog-ro.png',
+    category: 'RO Purifier',
+    content: {
+      intro: 'Aaj kal har ghar mein RO water purifier hai — aur jab yeh kaam karna band kar de toh paani ki problem serious ho jaati hai. Indore aur Bhopal mein hard water aur high TDS ki wajah se RO purifiers ko regular service ki zaroorat hoti hai. Is guide mein hum RO ki sabse common problems, unke causes, solutions aur service cost cover karenge — taaki aap sahi decision le sako.',
+      sections: [
+        {
+          heading: '1. RO Se Paani Bahut Kam Aa Raha Hai — Slow Flow',
+          body: 'Yeh RO ki sabse common complaint hai. Main reasons: Sediment pre-filter jam gaya hai (replace karna padega), RO membrane partially choked ho gayi hai, storage tank ka pressure low ho gaya hai, ya inlet water pressure kam hai. Solution: Pehle pre-filter check karo — yeh 3-6 months mein replace hona chahiye. Agar uske baad bhi flow slow hai toh membrane service ya replacement karana padega. Indore/Bhopal mein RO service ₹350-600 mein available hai.',
+        },
+        {
+          heading: '2. RO Ka Paani Kharab Taste Ya Smell Aa Raha Hai',
+          body: 'Agar RO ke paani mein plastic smell, musty smell ya kharab taste aa raha hai toh iska matlab post-carbon filter kharab ho gaya hai ya RO membrane choked hai. Post-carbon filter purified paani ko final polish karta hai aur smell remove karta hai. Yeh filter annually change hona chahiye. Membrane 2-3 saal mein replace karni chahiye. Agar nayi RO hai aur smell aa raha hai toh pehle 2-3 tank flush karo — initial plastic smell normal hai.',
+        },
+        {
+          heading: '3. RO Machine Se Paani Leak Ho Raha Hai',
+          body: 'Leakage common problem hai aur immediately fix karni chahiye — warna motor pump damage ho sakti hai. Common leak points: Pipe fittings loose ho gayi hain, storage tank ki pipe joint leak ho rahi hai, membrane housing cracked hai, ya faucet ke neeche se drip. Solution: Pehle RO band karo aur main supply off karo. Loose fittings ghar pe tighten ho sakti hain. Tank ya housing leak ke liye professional se contact karo. Cost: ₹200-500 depending on part.',
+        },
+        {
+          heading: '4. RO Paani Purify Nahi Kar Raha — High TDS Output',
+          body: 'Agar RO ke paani ka TDS high aa raha hai (500+ ppm) toh yeh serious problem hai — matlab RO membrane kaam nahi kar rahi. RO membrane hi main purification karta hai aur 90-95% impurities, TDS, bacteria, viruses remove karta hai. Membrane ki life: 2-3 years ya 6,000-10,000 litres. Indore/Bhopal mein hard water hone ki wajah se membrane jaldi choke hoti hai. Membrane replacement cost: ₹800-1,500 depending on brand.',
+        },
+        {
+          heading: '5. RO Machine Band Nahi Ho Rahi — Continuously Running',
+          body: 'Jab RO tank full ho jaata hai toh auto-shutoff valve band ho jaata hai aur purification ruk jaati hai. Agar RO continuously chalta rehta hai toh auto-shutoff valve kharab ho gaya hai ya tank bladder puncture ho gaya hai. Iska result: Motor pump overload, bijli bill zyaada, water wastage. Fix: Auto-shutoff valve replacement ₹300-500 mein. Tank replacement ₹600-1,000 mein.',
+        },
+        {
+          heading: '6. RO Annual Service Kab Aur Kyun Zaroor Hai',
+          body: 'RO purifier ki annual service mein: Sediment pre-filter replacement, carbon pre-filter replacement, post-carbon filter replacement, membrane performance check, TDS check before & after, tank cleaning, all fittings tighten, UV lamp check (if UV model). Annual service na karwane se: Paani quality gradually kharab hoti hai, membrane jaldi damage hoti hai, electricity wastage hoti hai. Indore/Bhopal mein annual RO service package ₹500-800 mein available hai — sabhi filters replacement ke saath.',
+        },
+        {
+          heading: 'RO Filter Replacement Schedule — Kitne Din Mein?',
+          body: 'Sediment filter (PP): Har 3-6 months. Carbon pre-filter: Har 6-12 months. RO membrane: Har 2-3 saal. Post-carbon filter: Har 12 months. UV lamp: Har 12 months (agar UV model hai). Note: Indore aur Bhopal mein water quality hard hai — TDS 400-800 ppm tak hoti hai — isliye yahan filters thoda jaldi replace karne padte hain compared to soft water areas.',
+        },
+      ],
+      faqs: [
+        {
+          q: 'RO purifier ki service kitne din mein karwani chahiye?',
+          a: 'Annual service sabse important hai. Sediment filter 3-6 months mein, carbon filters 6-12 months mein, aur membrane 2-3 saal mein replace karo. Agar paani ka taste/smell change ho ya flow slow ho toh immediately service karwao.',
+        },
+        {
+          q: 'Indore/Bhopal mein RO service ka cost kya hai?',
+          a: 'Basic RO service (filters replacement + check) ₹500-800 mein hoti hai. Membrane replacement ₹800-1,500 extra. Complete RO repair (parts ke saath) ₹1,000-2,500 tak ho sakta hai. HomeRepairPro same day service deta hai starting ₹350.',
+        },
+        {
+          q: 'RO ka TDS kitna hona chahiye?',
+          a: 'WHO ke according drinking water ka TDS 150-300 ppm ke beech ideal hai. 500 ppm tak acceptable hai. 500+ ppm pe membrane check karwao. RO purifier generally input TDS ka 10-15% output mein deta hai.',
+        },
+        {
+          q: 'RO membrane kitne saal chalti hai?',
+          a: 'Normal use mein RO membrane 2-3 saal chalti hai. Lekin Indore/Bhopal jaise hard water areas mein kabhi kabhi 1.5-2 saal mein replace karni padti hai. Annual TDS check se pata chalta hai ki membrane kaisi perform kar rahi hai.',
+        },
+        {
+          q: 'Kya RO purifier ghar pe repair ho sakta hai?',
+          a: 'Filter replacement aur loose fittings ghar pe ho sakti hain. Lekin membrane replacement, pump repair, tank replacement ke liye professional technician ko call karo. HomeRepairPro Indore & Bhopal mein same day RO service deta hai.',
+        },
+      ],
+    },
+  },
 ];

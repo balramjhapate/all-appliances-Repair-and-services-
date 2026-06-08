@@ -1,7 +1,8 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { insertLead } from '@/lib/supabase';
 import { cities, services } from '@/lib/data';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 interface LeadFormProps {
   defaultCity?: string;
@@ -28,12 +29,6 @@ export default function LeadForm({ defaultCity = '', defaultService = '', compac
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-
-    if (!/^[6-9]\d{9}$/.test(form.phone)) {
-      setError('Please enter a valid 10-digit Indian mobile number');
-      return;
-    }
-
     setLoading(true);
 
     const trackingData = {
@@ -60,7 +55,6 @@ export default function LeadForm({ defaultCity = '', defaultService = '', compac
       // Continue even if DB fails — WhatsApp is primary
     }
 
-    // Fire GTM event
     if (typeof window !== 'undefined' && (window as any).dataLayer) {
       (window as any).dataLayer.push({
         event: 'lead_submit',
@@ -69,9 +63,8 @@ export default function LeadForm({ defaultCity = '', defaultService = '', compac
       });
     }
 
-    // Open WhatsApp
     const msg = encodeURIComponent(
-      `🔧 New Lead!\nName: ${form.name}\nPhone: ${form.phone}\nCity: ${form.city}\nService: ${form.service}\nMessage: ${form.message}`
+      `🔧 New Lead!\nName: ${form.name || 'N/A'}\nPhone: ${form.phone || 'N/A'}\nCity: ${form.city || 'N/A'}\nService: ${form.service || 'N/A'}\nMessage: ${form.message || 'N/A'}`
     );
     window.open(`https://wa.me/918889539174?text=${msg}`, '_blank');
 
@@ -99,29 +92,23 @@ export default function LeadForm({ defaultCity = '', defaultService = '', compac
     <form onSubmit={handleSubmit} className="space-y-3">
       <div className={`grid ${compact ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'} gap-3`}>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Aapka Naam <span className="text-red-500">*</span>
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
           <input
             type="text"
             name="name"
             value={form.name}
             onChange={handleChange}
-            required
-            placeholder="Name dalein"
+            placeholder="Enter your name"
             className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B4FD8] focus:border-transparent"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Mobile Number <span className="text-red-500">*</span>
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label>
           <input
             type="tel"
             name="phone"
             value={form.phone}
             onChange={handleChange}
-            required
             placeholder="10-digit mobile number"
             maxLength={10}
             className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B4FD8] focus:border-transparent"
@@ -130,7 +117,7 @@ export default function LeadForm({ defaultCity = '', defaultService = '', compac
       </div>
 
       {!compact && (
-        <div className={`grid grid-cols-1 md:grid-cols-2 gap-3`}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">City</label>
             <select
@@ -139,7 +126,7 @@ export default function LeadForm({ defaultCity = '', defaultService = '', compac
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B4FD8]"
             >
-              <option value="">City select karo</option>
+              <option value="">Select your city</option>
               {cities.map((c) => (
                 <option key={c.slug} value={c.name}>{c.name}</option>
               ))}
@@ -153,10 +140,11 @@ export default function LeadForm({ defaultCity = '', defaultService = '', compac
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B4FD8]"
             >
-              <option value="">Service select karo</option>
+              <option value="">Select a service</option>
               {services.map((s) => (
                 <option key={s.slug} value={s.name}>{s.name}</option>
               ))}
+              <option value="RO Water Purifier Repair">RO Water Purifier Repair</option>
             </select>
           </div>
         </div>
@@ -164,13 +152,13 @@ export default function LeadForm({ defaultCity = '', defaultService = '', compac
 
       {!compact && (
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Problem describe karo (optional)</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Describe the Issue <span className="text-gray-400 font-normal">(optional)</span></label>
           <textarea
             name="message"
             value={form.message}
             onChange={handleChange}
             rows={2}
-            placeholder="Jaise: AC cooling nahi kar raha, 2 din se..."
+            placeholder="e.g. AC not cooling properly for 2 days..."
             className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#1B4FD8] resize-none"
           />
         </div>
@@ -181,14 +169,16 @@ export default function LeadForm({ defaultCity = '', defaultService = '', compac
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-[#F97316] hover:bg-orange-600 disabled:opacity-60 text-white font-bold py-4 rounded-lg text-base transition-colors flex items-center justify-center gap-2"
+        className="w-full bg-[#25D366] hover:bg-green-600 disabled:opacity-60 text-white font-bold py-4 rounded-lg text-base transition-colors flex items-center justify-center gap-2"
       >
         {loading ? (
           <>
             <span className="animate-spin">⏳</span> Bhej rahe hain...
           </>
         ) : (
-          <>💬 Free Quote Maango →</>
+          <>
+            <WhatsAppIcon className="w-5 h-5" /> Free Quote Maango →
+          </>
         )}
       </button>
 

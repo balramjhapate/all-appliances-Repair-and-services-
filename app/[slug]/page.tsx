@@ -5,6 +5,8 @@ import { notFound } from 'next/navigation';
 import LeadForm from '@/components/LeadForm';
 import FAQ from '@/components/FAQ';
 import { services, cities, pricingPlans, faqs } from '@/lib/data';
+
+type PricingPlan = { name: string; price: string; popular: boolean; features: string[] };
 import { servicePageSchema, faqSchema, localBusinessSchema } from '@/lib/schema';
 import Link from 'next/link';
 
@@ -83,6 +85,7 @@ export default async function ServiceCityPage({ params }: Props) {
   ];
 
   const relatedServices = services.filter((s) => s.slug !== service.slug).slice(0, 3);
+  const activePlans: PricingPlan[] = (service as any).plans ?? pricingPlans;
 
   return (
     <>
@@ -208,43 +211,44 @@ export default async function ServiceCityPage({ params }: Props) {
       </section>
 
       {/* Pricing */}
-      <section className="py-10 bg-gray-50">
+      <section className="py-12 bg-blue-50">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">
             {service.name} Price in {city.name}
           </h2>
-          <p className="text-center text-gray-500 text-sm mb-8">Transparent pricing — koi hidden charges nahi</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {pricingPlans.map((plan) => (
+          <p className="text-center text-gray-500 text-sm mb-10">Transparent pricing — koi hidden charges nahi</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+            {activePlans.map((plan) => (
               <div
                 key={plan.name}
-                className={`rounded-2xl p-6 ${plan.popular ? 'bg-[#1B4FD8] text-white shadow-xl scale-105' : 'bg-white border border-gray-200'}`}
+                className={`relative bg-white rounded-2xl p-6 shadow-md ${
+                  plan.popular
+                    ? 'border-2 border-[#1B4FD8] pt-8'
+                    : 'border border-gray-200'
+                }`}
               >
                 {plan.popular && (
-                  <span className="bg-[#F97316] text-white text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">
-                    Most Popular
-                  </span>
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                    <span className="bg-[#1B4FD8] text-white text-[11px] font-black px-4 py-1.5 rounded-full uppercase tracking-wide whitespace-nowrap">
+                      Most Popular
+                    </span>
+                  </div>
                 )}
-                <h3 className={`font-bold text-lg mb-1 ${plan.popular ? 'text-white' : 'text-gray-900'}`}>
-                  {plan.name}
-                </h3>
-                <p className={`text-3xl font-black mb-4 ${plan.popular ? 'text-[#F97316]' : 'text-[#1B4FD8]'}`}>
-                  ₹{plan.price}<span className="text-sm font-normal"> onwards</span>
+                <h3 className="font-bold text-lg text-gray-900 mb-2">{plan.name}</h3>
+                <p className="text-4xl font-black text-[#1B4FD8] mb-1">
+                  ₹{plan.price}
                 </p>
-                <ul className="space-y-2">
+                <p className="text-gray-400 text-xs mb-5">onwards</p>
+                <ul className="space-y-2.5 mb-6">
                   {plan.features.map((f) => (
-                    <li key={f} className={`text-sm flex gap-2 ${plan.popular ? 'text-blue-100' : 'text-gray-600'}`}>
-                      <span className="text-[#16A34A] flex-shrink-0">✓</span> {f}
+                    <li key={f} className="text-sm flex gap-2 text-gray-600">
+                      <span className="text-[#16A34A] font-bold flex-shrink-0">✓</span> {f}
                     </li>
                   ))}
                 </ul>
                 <a
                   href="tel:+918889539174"
-                  className={`mt-5 block text-center py-3 rounded-xl font-bold text-sm transition-colors ${
-                    plan.popular
-                      ? 'bg-[#F97316] hover:bg-orange-600 text-white'
-                      : 'bg-[#1B4FD8] hover:bg-blue-700 text-white'
-                  }`}
+                  className="block text-center w-full py-3 rounded-xl font-bold text-sm bg-[#1B4FD8] hover:bg-blue-700 text-white transition-colors"
                 >
                   Book Now
                 </a>

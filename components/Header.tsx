@@ -5,13 +5,75 @@ import { useState, useEffect } from 'react';
 import { services } from '@/lib/data';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
 
+// ┌─────────────────────────────────────────────────────────────────┐
+// │          LOGO CONTROLS — SIRF YE VALUES BADLO                   │
+// │  Dono (DESKTOP & MOBILE) bilkul ALAG hain.                      │
+// │  Ek badloge to dusre par KOI ASAR NAHI hoga.                    │
+// ├─────────────────────────────────────────────────────────────────┤
+// │  x     →  LEFT / RIGHT   :  -10 = left,    +10 = right         │
+// │  y     →  UPAR / NEECHE  :  -10 = upar,    +10 = neeche        │
+// │  scale →  ZOOM           :  0.8 = chota,   1.2 = bada          │
+// │  w     →  WIDTH  (px)                                           │
+// │  h     →  HEIGHT (px)                                           │
+// └─────────────────────────────────────────────────────────────────┘
+
+// ┌─────────────────────────────────────────────────────────────────┐
+// │         CALL BUTTON CONTROLS (mobile only)                      │
+// │  ios     →  sirf Apple iPhone/iPad par lagega                   │
+// │  android →  sirf Android phones par lagega                      │
+// │  x = LEFT/RIGHT  :  -10 = left,  +10 = right                   │
+// │  y = UPAR/NEECHE :  -10 = upar,  +10 = neeche                  │
+// └─────────────────────────────────────────────────────────────────┘
+
+const CALL_BTN = {
+  ios: {
+    x: -50,     // iOS par call button LEFT/RIGHT  (-8 = thoda left)
+    y: 0,      // iOS par call button UPAR/NEECHE
+  },
+  android: {
+    x: -5,      // Android par call button LEFT/RIGHT
+    y: 0,      // Android par call button UPAR/NEECHE
+  },
+};
+
+const LOGO = {
+
+  // ════════════════════════════════════════════════════════════════
+  //  DESKTOP CONTROLS  (sirf desktop/laptop par dikhega)
+  //  Mobile par in values ka koi asar NAHI hoga
+  // ════════════════════════════════════════════════════════════════
+  desktop: {
+    x:     -20,      // LEFT/RIGHT   →  -10 = thoda left,  +10 = thoda right
+    y:     4.3,      // UPAR/NEECHE  →  -10 = thoda upar,  +10 = thoda neeche
+    scale: 1.30,    // ZOOM         →   1.0 = normal,      1.2 = 20% bada
+    w:     260,    // WIDTH  (px)
+    h:     60,     // HEIGHT (px)
+  },
+
+  // ════════════════════════════════════════════════════════════════
+  //  MOBILE CONTROLS  (sirf phone/tablet par dikhega)
+  //  Desktop par in values ka koi asar NAHI hoga
+  // ════════════════════════════════════════════════════════════════
+  mobile: {
+    x:     -50,    // LEFT/RIGHT   →  -10 = thoda left,  +10 = thoda right
+    y:     2,      // UPAR/NEECHE  →  -10 = thoda upar,  +10 = thoda neeche
+    scale: 1.4,    // ZOOM         →   1.0 = normal,      1.2 = 20% bada
+    w:     215,    // WIDTH  (px)
+    h:     56,     // HEIGHT (px)
+  },
+
+};
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isIos, setIsIos] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll, { passive: true });
+    // iOS detect: iPhone/iPad/iPod
+    setIsIos(/iP(hone|ad|od)/.test(navigator.userAgent));
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -28,17 +90,43 @@ export default function Header() {
       {/* Nav bar */}
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center gap-2">
 
-        {/* Logo */}
-        <Link href="/" onClick={close} className="-ml-5 translate-y-2 flex items-center overflow-hidden h-[56px] w-[215px] md:ml-0 md:translate-y-0 md:h-[60px] md:w-[260px] flex-shrink-0">
-          <Image
-            src="/logo.png"
-            alt="HomeRepairPro"
-            width={300}
-            height={100}
-            className="h-full w-full object-contain scale"
-            priority
-          />
-        </Link>
+        {/* LOGO — DESKTOP only (hidden on mobile) */}
+        <div
+          className="hidden md:block flex-shrink-0"
+          style={{ width: LOGO.desktop.w, height: LOGO.desktop.h }}
+        >
+          <Link
+            href="/"
+            onClick={close}
+            className="flex items-center w-full h-full"
+            style={{
+              transform:       `translate(${LOGO.desktop.x}px, ${LOGO.desktop.y}px) scale(${LOGO.desktop.scale})`,
+              transformOrigin: 'left center',
+              display:         'block',
+            }}
+          >
+            <Image src="/logo.png" alt="HomeRepairPro" width={300} height={100} className="h-full w-full object-contain" priority />
+          </Link>
+        </div>
+
+        {/* LOGO — MOBILE only (hidden on desktop) */}
+        <div
+          className="flex md:hidden flex-shrink-0"
+          style={{ width: LOGO.mobile.w, height: LOGO.mobile.h, position: 'relative', zIndex: 1 }}
+        >
+          <Link
+            href="/"
+            onClick={close}
+            className="flex items-center w-full h-full"
+            style={{
+              transform:       `translate(${LOGO.mobile.x}px, ${LOGO.mobile.y}px) scale(${LOGO.mobile.scale})`,
+              transformOrigin: 'left center',
+              display:         'block',
+            }}
+          >
+            <Image src="/logo.png" alt="HomeRepairPro" width={300} height={100} className="h-full w-full object-contain" priority />
+          </Link>
+        </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-3 mx-auto">
@@ -79,11 +167,14 @@ export default function Header() {
         </div>
 
         {/* Mobile: call + hamburger */}
-        <div className="ml-auto flex items-center gap-2 md:hidden">
+        <div className="ml-auto flex items-center gap-2 md:hidden" style={{ position: 'relative', zIndex: 50 }}>
           <a
             href="tel:+918889539174"
             className="w-10 h-10 flex items-center justify-center bg-[#F97316] text-white rounded-lg text-lg flex-shrink-0"
             aria-label="Call us"
+            style={{
+              transform: `translate(${isIos ? CALL_BTN.ios.x : CALL_BTN.android.x}px, ${isIos ? CALL_BTN.ios.y : CALL_BTN.android.y}px)`,
+            }}
           >
             📞
           </a>
