@@ -16,7 +16,7 @@ export default function HeroParallax() {
       `}</style>
       <div className="hero-pan absolute inset-0">
         <Image
-          src="/hero-main.png"
+          src="/images/hero-main.png"
           alt="HomeRepairPro technician repairing AC unit"
           fill
           priority

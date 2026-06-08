@@ -62,7 +62,7 @@ export default function Home() {
           {/* Appliance image — mobile, below text */}
           <div className="relative w-full h-56 px-2 pb-2">
             <Image
-              src="/hero-appliances.png"
+              src="/images/hero-appliances.png"
               alt="AC, Washing Machine, Refrigerator, Geyser, Microwave, Chimney repair"
               fill
               priority
@@ -129,7 +129,7 @@ export default function Home() {
                 }}
               >
                 <Image
-                  src="/hero-appliances.png"
+                  src="/images/hero-appliances.png"
                   alt="AC, Washing Machine, Refrigerator, Geyser, Microwave, Chimney repair"
                   fill
                   priority

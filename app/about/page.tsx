@@ -65,7 +65,7 @@ export default function AboutPage() {
             </div>
             <div className="rounded-2xl overflow-hidden">
               <Image
-                src="/about-technician.png"
+                src="/images/about-technician.png"
                 alt="HomeRepairPro technician at work"
                 width={600}
                 height={450}

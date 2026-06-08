@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: 'https://homerepairpro.in',
     siteName: 'HomeRepairPro',
     type: 'website',
-    images: [{ url: 'https://www.homerepairpro.in/logo.png', width: 400, height: 120 }],
+    images: [{ url: 'https://www.homerepairpro.in/images/logo.png', width: 400, height: 120 }],
   },
   alternates: {
     canonical: 'https://homerepairpro.in',

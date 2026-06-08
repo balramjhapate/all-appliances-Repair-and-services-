@@ -105,7 +105,7 @@ export default function Header() {
               display:         'block',
             }}
           >
-            <Image src="/logo.png" alt="HomeRepairPro" width={300} height={100} className="h-full w-full object-contain" priority />
+            <Image src="/images/logo.png" alt="HomeRepairPro" width={300} height={100} className="h-full w-full object-contain" priority />
           </Link>
         </div>
 
@@ -124,7 +124,7 @@ export default function Header() {
               display:         'block',
             }}
           >
-            <Image src="/logo.png" alt="HomeRepairPro" width={300} height={100} className="h-full w-full object-contain" priority />
+            <Image src="/images/logo.png" alt="HomeRepairPro" width={300} height={100} className="h-full w-full object-contain" priority />
           </Link>
         </div>
 
